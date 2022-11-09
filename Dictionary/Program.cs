@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Dictionary
 {
@@ -6,7 +7,17 @@ namespace Dictionary
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Dictionary<string, string> estados = new Dictionary<string, string>();
+
+            estados.Add("SP", "SÃO PAULO");
+            estados.Add("RJ", "RIO DE JANEIRO");
+            estados.Add("PE", "PERNAMBUCO");
+            estados.Add("MG", "MINAS GERAIS");
+
+            foreach (var item in estados)
+            {
+                Console.WriteLine($"Chave: {item.Key} | Estado: {item.Value}");
+            }
         }
     }
 }

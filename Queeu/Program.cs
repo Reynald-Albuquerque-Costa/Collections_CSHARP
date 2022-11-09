@@ -9,43 +9,26 @@ namespace Queeu
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World Fila !!!");
+            Queue<int> fila = new Queue<int>();
 
-            Queue<Pessoa> pessoas = new();
+            fila.Enqueue(1);
+            fila.Enqueue(2);
+            fila.Enqueue(3);
+            fila.Enqueue(4);
+            fila.Enqueue(5);
 
-            pessoas.Enqueue(new Pessoa("Reynald"));
-            pessoas.Enqueue(new Pessoa("Reinaldo"));
-            pessoas.Enqueue(new Pessoa("Renan"));
-            pessoas.Enqueue(new Pessoa("Dulce"));
-            pessoas.Enqueue(new Pessoa("Karol"));
-
-            Console.WriteLine($"O primeiro da fila é: {pessoas.Dequeue()}");
-
-            pessoas.Peek();
-
-            Console.WriteLine($"O número de pessoa na fila é : {pessoas.Count()}");
-
-            foreach (Pessoa pessoa in pessoas)
+            foreach(int filas in fila)
             {
-                Console.WriteLine(pessoa.ToString());
+                 Console.WriteLine(filas);
             }
 
-            }
+            Console.WriteLine($"Removendo o elemento: {fila.Dequeue()} ");
+            fila.Enqueue(10);
 
-        public class Pessoa
-        {
-            public string Nome { get; set; }
-
-            public Pessoa(string nome)
+            foreach(int filas in fila)
             {
-                Nome = nome;
-            }
-
-            public override string ToString()
-            {
-                return $"Nome: {Nome}";
-            }
-
+                 Console.WriteLine(filas);
+            } 
 
         }
     }
